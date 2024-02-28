@@ -7,6 +7,9 @@ function App() {
   const [ans,setAns] = useState(null);
   const answer=()=>{
     setAns(eval(value));
+    if(value==false){
+      setAns("Error");
+    }
   }
   const clear=()=>{
     setValue('');
@@ -15,7 +18,7 @@ function App() {
   return (
     <div className='container'>
       <h1>React Calculator</h1>
-      <input value={value}></input>
+      <input type='text' value={value}></input>
       <div className='ans'>{ans}</div>
       <div>
       <div className='operator'>
